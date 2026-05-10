@@ -30,13 +30,13 @@ pipeline {
             
         stage('Build Docker Image') { 
             steps { 
-                bat 'docker build -t ci-node-app .' 
+                bat 'docker build -t ci-cd-node .' 
             } 
             } 
             
         stage('Run Docker Container') { 
             steps { 
-                bat 'docker run -d -p 3001:3001 --name ci-container ci-node-app' 
+                bat 'docker run -d -p 3001:3001 --name ci-container ci-cd-node' 
             } 
             } 
     }
